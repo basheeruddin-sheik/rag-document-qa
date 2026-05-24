@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables (contains secrets)
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Test coverage
+coverage/
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# Uploaded files (if you add local disk storage later)
+uploads/
+
+.claude
