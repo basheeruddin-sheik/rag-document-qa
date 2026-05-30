@@ -1,30 +1,41 @@
-# Dependencies
+# ── Dependencies (server + frontend) ──────────────────────────────────────
 node_modules/
+server/node_modules/
+frontend/node_modules/
 
-# Build output
+# ── Build output ──────────────────────────────────────────────────────────
 dist/
+server/dist/
+frontend/dist/
 
-# Environment variables (contains secrets)
+# ── Environment variables (NEVER commit secrets) ──────────────────────────
 .env
+server/.env
+frontend/.env
 
-# Logs
+# ── Logs ──────────────────────────────────────────────────────────────────
 *.log
 npm-debug.log*
+server/logs/
 
-# OS
+# ── OS ────────────────────────────────────────────────────────────────────
 .DS_Store
+Thumbs.db
 
-# IDE
+# ── IDE ───────────────────────────────────────────────────────────────────
 .vscode/
 .idea/
 
-# Test coverage
+# ── Test coverage ─────────────────────────────────────────────────────────
 coverage/
+server/coverage/
+frontend/coverage/
 
-# TypeScript incremental build cache
+# ── TypeScript incremental build cache ────────────────────────────────────
 *.tsbuildinfo
 
-# Uploaded files (if you add local disk storage later)
-uploads/
+# ── Vite cache ────────────────────────────────────────────────────────────
+frontend/.vite/
 
+# ── Claude Code internal ──────────────────────────────────────────────────
 .claude

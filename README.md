@@ -1,6 +1,74 @@
-# RAG Document Q&A Engine
+# 📚 RAG Document Q&A Engine
 
-A production-ready **Retrieval-Augmented Generation (RAG)** pipeline that lets you upload any PDF documents and ask questions across all of them. Built with **NestJS + TypeScript**, **LangChain.js**, **Google Gemini** (free tier), and **pgvector on PostgreSQL**.
+> Upload PDFs. Ask questions. Get AI answers grounded in **your** documents.
+
+A full-stack RAG (Retrieval-Augmented Generation) application with **NestJS backend**, **React + Vite frontend**, **PostgreSQL + pgvector** semantic search, and **Google Gemini** AI.
+
+---
+
+## 🗂️ Project Structure
+
+```
+rag-document-qa/
+├── server/          ← NestJS backend  (cd server && npm run start:dev)
+├── frontend/        ← React + Vite    (cd frontend && npm run dev)
+└── docker-compose.yml  ← PostgreSQL + pgvector database
+```
+
+See **[EXPLAINED.md](./EXPLAINED.md)** for a complete beginner-friendly explanation of every concept.
+
+---
+
+## ✨ Features
+
+| Feature | Details |
+|---|---|
+| **JWT Authentication** | Register / login, bcrypt-hashed passwords |
+| **PDF Upload** | Drag-and-drop UI, up to 50 MB |
+| **Sentence-aware chunking** | Splits on paragraphs → sentences, not mid-word |
+| **Semantic search** | Gemini `gemini-embedding-001` (3072-dim vectors) |
+| **Hybrid re-ranking** | Cosine similarity + keyword overlap boost |
+| **Streaming answers** | Word-by-word SSE — no waiting for full response |
+| **Conversation memory** | AI remembers last 5 Q&A turns per user |
+| **Multi-user** | Each user sees only their own documents |
+| **Document management** | List & delete uploaded PDFs |
+| **Rate limiting** | 100 req/min per IP |
+| **Swagger docs** | Auto-generated at `/api/docs` |
+| **Unit tests** | Jest tests for all services |
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js ≥ 18  •  Docker Desktop  •  [Gemini API key](https://aistudio.google.com/app/apikey) (free)
+
+### 1. Start the database
+```bash
+docker compose up -d
+```
+
+### 2. Start the backend
+```bash
+cd server
+cp .env.example .env       # then fill in GEMINI_API_KEY and JWT_SECRET
+npm install
+npm run start:dev
+# → http://localhost:3000
+# → Swagger: http://localhost:3000/api/docs
+```
+
+### 3. Start the frontend
+```bash
+cd frontend
+npm install
+npm run dev
+# → http://localhost:5173
+```
+
+---
+
+## Original single-server docs (legacy)
 
 ---
 
