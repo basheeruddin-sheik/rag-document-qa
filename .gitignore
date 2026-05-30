@@ -39,3 +39,6 @@ frontend/.vite/
 
 # ── Claude Code internal ──────────────────────────────────────────────────
 .claude
+
+# ── Personal learning notes (local only) ─────────────────────────────────
+EXPLAINED.md
